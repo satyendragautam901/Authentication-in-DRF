@@ -10,6 +10,7 @@ from rest_framework.permissions import IsAdminUser, IsAuthenticated
 # Create your views here.
 class StudentViewset(viewsets.ViewSet):
     authentication_classes = [BasicAuthentication]
+    # permission_classes = [IsAdminUser] # this is override by global authentication defined in setting.py
     permission_classes = [IsAuthenticated]
 
     def list(self, request):

@@ -126,3 +126,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# this is global authentication now all the view are protected under this 
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION':['rest_framework.authentication.BasicAuthentication'],
+#     'DEFAULT_PERMISSION_ACCESS':['rest_framework.permission.IsAuthenticaticated']
+# }
