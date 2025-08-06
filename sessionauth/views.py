@@ -9,6 +9,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.authentication import BasicAuthentication, SessionAuthentication
 from rest_framework.permissions import IsAdminUser, IsAuthenticated, IsAuthenticatedOrReadOnly, DjangoModelPermissions
+from .custompermission import MyPermission
 
 # Create your views here.
 class StudentViewset(viewsets.ViewSet):
@@ -19,7 +20,9 @@ class StudentViewset(viewsets.ViewSet):
     # permission_classes = [IsAuthenticatedOrReadOnly] 
 
     # admin user can issue permission for each operation
-    permission_classes = [DjangoModelPermissions]
+    # permission_classes = [DjangoModelPermissions]
+
+    permission_classes = [MyPermission] # this is my custom permission
 
 
     def list(self, request):
