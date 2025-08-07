@@ -4,6 +4,6 @@ from .views import StudentViewset
 
 router = DefaultRouter()
 
-router.register('student',StudentViewset,basename='tokenauth')
+router.register('student',StudentViewset,basename='basicauth')
 
 urlpatterns = router.urls

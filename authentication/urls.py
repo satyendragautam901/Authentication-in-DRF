@@ -16,10 +16,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from rest_framework.authtoken.views import obtain_auth_token
+from tokenauth.GenerateCustomToken import CustomToken
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('basic-auth/', include('basicauth.urls')),
     path('session-auth/', include('sessionauth.urls')),
-    path('auth/', include('rest_framework.urls')),
+    # path('auth/', include('rest_framework.urls')), #this is basically used to Basic and Session auth
+
+    # generate token using api end points
+    path('api-token-auth/', obtain_auth_token), # by hitting this url endpoint with username and password token generated'
+    path('generate-token/', CustomToken.as_view()), # this is custom token generator 
+
+    path('token-auth/', include('tokenauth.urls')), # this api end points for token authentication practise
 ]

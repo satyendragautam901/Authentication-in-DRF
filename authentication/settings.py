@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'basicauth',
     'sessionauth',
+    'tokenauth',
+    'rest_framework.authtoken',# this is used to token based authentication
     'corsheaders',
     
 ]
