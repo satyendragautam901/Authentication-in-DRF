@@ -14,7 +14,8 @@ class StudentViewset(viewsets.ViewSet):
     # before authenticating using token first generate token then send in request, below are the way to generate token
     # using admin pane, using django manage.py command, using exposing api, using signals
 
-    
+    # python manage.py drf_create_token user2 by using this command drf will create or return token
+     
     authentication_classes = [TokenAuthentication] # this is token authentication
     permission_classes = [IsAuthenticated] 
 
